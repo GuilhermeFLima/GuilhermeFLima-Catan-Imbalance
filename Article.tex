@@ -29,8 +29,7 @@ A substantial component of Catan strategy is the placement of initial settlement
 
 Given a sequence of dice rolls, and given two specific dice roll results $m$ and $n$, both having the same probability of occurring (e.g. 6 and 8) we shall say that there's \emph{high imbalance between m and n} if either $n$ occurs at least twice as many times as $m$ in the sequence, or  $m$ occurs at least twice as many times as $n$ in the sequence.
 
-First, we shall assume that the average Catan game has roughly 70 turns. This seems in line with our personal experience of over 1000 games and the data gathered in \cite{BGB}. We simulated 1000000 (one million) games with 70 dice rolls for both random and balanced dice. Our original Python code can be found here.
-
+First, we shall assume that the average Catan game has roughly 70 turns. This seems in line with our personal experience of over 1000 games and the data gathered in \cite{BGB}. We simulated 1000000 (one million) games with 70 dice rolls for both random and balanced dice. Our original Python code can be found in \cite{githubsim}.
 
 With random dice, the probability of high imbalance between 6 and 8 was 0.172698, or roughly 17\% and the probability of high imbalance between 6 and 8 or 5 and 9 was 0.365337, or roughly 37\%. On the other hand, with balanced dice the probability of high imbalance between 6 and 8 was 0.027685 $\cong 3\%$, and the probability of high imbalance between 6 and 8 or 5 and 9 was 0.079603 $\cong 8\% .$
 
@@ -103,7 +102,7 @@ We are multiplying by 4 since, if $(k_1, k_2, k_3, k_4) \in \mathbf{L}$ then $(k
 
 Hence we conclude that the approximate probability of either high imbalance between 6 and 8 or high imbalance between 5 and 9 is approximately $0.1725 + 0.2321 - 0.0390 = 0.3656$.
 
-And so we see that our simulation adequately approximates the analytical solution.
+And so we see that our simulation adequately approximates the analytical solution. The Python code used for the numerical calculations may be found in \cite{githubsim}.
 
 \section{Summary of Results}
 The following table that summarizes and compares the balanced dice and the random dice. For each type of dice we used simulations of one million games.
@@ -150,7 +149,14 @@ Although the imbalance probability is much higher when there are fewer turns, th
  \bibitem{BGB}
  Alex Cates, \textit{Board Game Breakdown: Settlers of Catan, the basics}, 2021. \\
  https://www.alexcates.com/post/board-game-breakdown-settlers-of-catan-the-basics
-  
+
+\bibitem{githubsim}
+https://github.com/GuilhermeFLima/GuilhermeFLima-Catan-Imbalance/blob/main/imbalance-simulation.py
+
+\bibitem{githubana}
+https://github.com/GuilhermeFLima/GuilhermeFLima-Catan-Imbalance/blob/main/imbalance-analytical.py
+
+
 \end{thebibliography}
 
 \end{document}
