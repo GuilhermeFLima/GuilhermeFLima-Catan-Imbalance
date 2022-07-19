@@ -2,14 +2,19 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{multirow}
+\usepackage{xcolor}
+\PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref}
-\title{The Variance of High Production Hexes in Catan}
-\author{G.F. Lima}
+\hypersetup{colorlinks, urlcolor=blue, citecolor=blue}
+
+
+\title{The Variance of High Production Hexes in Catan.}
+\author{G.F. Lima, Ph.D}
 \begin{document}
 \maketitle
 \section{Introduction}
 
-Sometimes in a game of Catan the observed dice rolls can be very different from the expected distribution, as has been shown in \cite{DBD}. In order to give a more intuitive sense of this variance, we will focus on the particular case where, given two numbers with an equally high probability of occurring, during a game one rolls twice as many times as the other or more. We will also show that the chances of such occurrences are surprisingly high. Furthermore, we'll show that such issues can be mitigated by using balanced dice, as implemented in Colonist.io.
+In Catan the observed dice rolls can sometimes be very different from the expected distribution, as has been shown in \cite{DBD}. In order to give a more intuitive sense of this variance, we will focus on the particular case where, given two numbers with an equally high probability of occurring, one number rolls at least twice as many times as the other during a game. We will show that the chances of such occurrences are surprisingly high. Furthermore, we'll show that such issues can be mitigated by using balanced dice, as implemented in Colonist.io.
 
 
 \section{Motivation}
@@ -104,7 +109,7 @@ Hence we conclude that the approximate probability of either high imbalance betw
 
 And so we see that our simulation adequately approximates the analytical solution. The Python code used for the numerical calculations may be found in \cite{githubsim}.
 
-\section{Summary of Results}
+\section{Summary of Results and Conclusion}
 The following table that summarizes and compares the balanced dice and the random dice. For each type of dice we used simulations of one million games.
 
 \begin{center}
@@ -136,25 +141,33 @@ The following table that summarizes and compares the balanced dice and the rando
 %\end{figure*}
 %\end{table}
 \end{center}
-Although the imbalance probability is much higher when there are fewer turns, the robber mechanism can counter-balance early leads.
+Although the imbalance probability is much higher when there are fewer turns, the robber mechanism, if used correctly, can counter-balance early leads. 
 
+The actual effect of a high imbalance will clearly vary from game to game depending on how settlements and cities are distributed on the board. For instance, it can be drastically amplified, for better or worse, if one player has what is referred to as a \emph{high variance} set up, with both initial settlements on the same high production number; and it can be somewhat mitigated if all players share the pairs where the imbalance occurred. 
+
+
+One can always argue that the cooperation between players is an integral part of the game since it can compensate any elements derived from chance and luck, and that high level play focuses on the careful administration of alliances and trades aimed against the player in the lead. Addressing these arguments would require an analysis of complete data from high level tournament games, which is something that seems hard to come by as of yet. 
+
+And so we leave it to the discretion of the reader to decide whether the final results of games with high imbalances can adequately measure the skill of the players involved, or whether games with balanced dice offer a more adequate alternative in that respect.
+
+\pagebreak 
 
 \begin{thebibliography}{9}
 
 \bibitem{DBD}
   Jeff d'Eon, \textit{Designing Balanced Dice}, 2020.\\
   Colonist Blog: \\
-  \url{<https://blog.colonist.io/designing-balanced-dice/>}
+  \url{https://blog.colonist.io/designing-balanced-dice/}
  
  \bibitem{BGB}
  Alex Cates, \textit{Board Game Breakdown: Settlers of Catan, the basics}, 2021. \\
- \url{<https://www.alexcates.com/post/board-game-breakdown-settlers-of-catan-the-basics>}
+ \url{https://www.alexcates.com/post/board-game-breakdown-settlers-of-catan-the-basics}
 
 \bibitem{githubsim}
-\url{<https://github.com/GuilhermeFLima/GuilhermeFLima-Catan-Imbalance/blob/main/imbalance-simulation.py>}
+\url{https://github.com/GuilhermeFLima/GuilhermeFLima-Catan-Imbalance/blob/main/imbalance-simulation.py}
 
 \bibitem{githubana}
-\url{<https://github.com/GuilhermeFLima/GuilhermeFLima-Catan-Imbalance/blob/main/imbalance-analytical.py>}
+\url{https://github.com/GuilhermeFLima/GuilhermeFLima-Catan-Imbalance/blob/main/imbalance-analytical.py}
 
 
 \end{thebibliography}
